@@ -9,7 +9,7 @@ import {GlobalStyles} from './global-styles'; // the global styles across the ap
 
 ReactDOM.render(
   <>
-    <FirebaseContext.Provider VALUE={{firebase}}>
+    <FirebaseContext.Provider value={{firebase}}>
       <GlobalStyles />
       <App />
     </FirebaseContext.Provider>
