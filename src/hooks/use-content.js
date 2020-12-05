@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 
 import { FirebaseContext } from '../context/firebase';
 
+// A custom hook to pull data from firebase
 export default function useContent(target) {
   // some state and pulling firebase object from context
   const [content, setContent] = useState([]);
