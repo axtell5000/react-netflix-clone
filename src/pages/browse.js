@@ -8,7 +8,7 @@ export default function Browse() {
   // need series and film data
   const { series } = useContent('series');
   const { films } = useContent('films');
-     
+  
   // need sliders
   const slides = selectionFIlter( { series, films });
   
