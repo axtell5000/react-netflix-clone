@@ -60,3 +60,119 @@ export const ButtonLink = styled(ReachRouterLink)`
     background: #f40612;
   }
 `;
+
+export const Link = styled.p`
+  color: #fff;
+  cursor: pointer;
+  font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
+  margin-right: 30px;
+  text-decoration: none;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+`;
+
+export const Group = styled.div`
+  align-items: center;
+  display: flex;  
+`;
+
+// this allows us to use the style from Container as well
+export const Feature = styled(Container)`
+  align-items: normal;
+  flex-direction: column;
+  padding: 150px 0 500px 0;  
+  width: 50%;
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
+`;
+
+export const Picture = styled.button`
+  background: url(${({ src }) => src});
+  background-size: contain;
+  border: 0;
+  cursor: pointer;  
+  height: 32px;
+  width: 32px;
+  
+`;
+
+export const Dropdown = styled.div`
+  background-color: black;
+  display: none;
+  padding: 10px;
+  position: absolute;
+  top: 32px;
+  right: 10px;
+  width: 100px;
+
+  ${Group}:last-of-type ${Link} {
+    cursor: pointer;
+  }
+
+  ${Group} {
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    ${Link} {
+      cursor: pointer;
+    }
+
+    ${Picture} {
+      cursor: default;
+    }
+  }
+
+  button {
+    margin-right: 10px;
+  }
+
+  p {
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+`;
+
+export const Profile = styled.div`
+  align-items: center;
+  display: flex;  
+  margin-left: 20px;
+  position: relative;
+
+  button {
+    cursor: pointer;
+  }
+
+  &:hover > ${Dropdown} {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const FeatureCallOut = styled.h2`
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: normal;
+  margin: 0 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);  
+`;
+
+export const Text = styled.p`
+  color: white;
+  font-size: 22px;
+  line-height: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+`;
+
