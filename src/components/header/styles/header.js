@@ -176,3 +176,52 @@ export const Text = styled.p`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 `;
 
+export const Search = styled.div`
+  align-items: center;
+  display: flex;  
+
+  svg {
+    color: white;
+    cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
+
+export const SearchIcon = styled.button`
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  outline: 0;  
+  padding: 0;  
+  width: 32px;  
+
+  img {
+    filter: brightness(0) invert(1);
+    width: 16px;
+  }
+`;
+
+export const SearchInput = styled.input`
+  background-color: rgba(64, 64, 64, 0.5);  
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  height: 30px;    
+  margin-left: ${({ active }) => (active === true ? '10px' : '0')};
+  opacity: ${({ active }) => (active === true ? '1' : '0')};
+  padding: ${({ active }) => (active === true ? '0 10px' : '0')};  
+  transition: width 0.5s;
+  width: ${({ active }) => (active === true ? '200px' : '0px')};
+
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+`;

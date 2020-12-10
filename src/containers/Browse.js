@@ -12,6 +12,7 @@ export function BrowseContainer({ slides }) {
   // state
   const [loading, setLoading] = useState(true);
   const [profile, setProfile] = useState({});
+  const [searchTerm, setSearchTerm] = useState('');
 
   // pulling firebase context
   const { firebase } = useContext(FirebaseContext);
@@ -39,7 +40,9 @@ export function BrowseContainer({ slides }) {
             <Header.TextLink>Series</Header.TextLink>
             <Header.TextLink>Films</Header.TextLink>
           </Header.Group>
+
           <Header.Group>
+            <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <Header.Profile>
               <Header.Picture src={user.photoURL} />
               <Header.Dropdown>
