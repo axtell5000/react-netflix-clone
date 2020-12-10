@@ -225,3 +225,23 @@ export const SearchInput = styled.input`
     background-color: rgba(0, 0, 0, 0.8);
   }
 `;
+
+export const PlayButton = styled.button`
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  border-width: 0;
+  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);  
+  color: #000;
+  cursor: pointer;  
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;  
+  max-width: 130px;  
+  padding: 10px 20px;
+  transition: background-color 0.5s ease;
+  
+  &:hover {
+    background-color: #ff1e1e;
+    color: white;
+  }
+`
