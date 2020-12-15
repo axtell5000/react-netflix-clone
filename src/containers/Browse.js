@@ -1,4 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
+import Fuse from 'fuse.js';
+
+// Fuse is a lightweight fuzzy search package. Generally speaking, fuzzy searching (more formally known as approximate string matching) is the technique of finding strings that are approximately equal to a given pattern (rather than exactly).
 
 import { FirebaseContext } from '../context/firebase';
 import { SelectProfileContainer } from './Profiles';
@@ -33,6 +36,19 @@ export function BrowseContainer({ slides }) {
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
+
+  // based on searchTerm changing
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, { keys: ['data.description', 'data.title', 'data.genre'] });
+    const results = fuse.search(searchTerm).map(({ item }) => item);
+
+    if (slideRows.length > 0 && searchTerm.length > 3 && results.length > 0) {
+      setSlideRows(results);
+    } else {
+      setSlideRows(slides[category]);
+    }
+  }, [searchTerm])
+
 
   return profile.displayName ?  (
     <>
