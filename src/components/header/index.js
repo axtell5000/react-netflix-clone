@@ -22,7 +22,7 @@ import {
 
 export default function Header({ background = true, children, ...restProps}) {
   return (
-    background ? <Background {...restProps}>{children}</Background>: children
+    background ? <Background data-testid="header-bg" {...restProps}>{children}</Background>: children
   );
 }
 
@@ -60,7 +60,10 @@ Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps 
 
   return (
     <Search {...restProps}>
-      <SearchIcon onClick={() => setSearchActive((searchActive) => !searchActive)}>
+      <SearchIcon 
+        onClick={() => setSearchActive((searchActive) => !searchActive)}
+        data-testid="search-click"
+      >
         <img src="/images/icons/search.png" alt="Search" />
       </SearchIcon>
       <SearchInput
