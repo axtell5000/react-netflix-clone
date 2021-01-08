@@ -50,7 +50,7 @@ export default function Signup() {
       <HeaderContainer>
         <Form>
           <Form.Title>Sign Up</Form.Title>
-          {error && <Form.Error>{error}</Form.Error>}
+          {error && <Form.Error data-testid="error">{error}</Form.Error>}
 
           <Form.Base onSubmit={handleSignup} method="POST">
             <Form.Input
@@ -70,7 +70,7 @@ export default function Signup() {
               placeholder="Password"
               onChange={({ target }) => setPassword(target.value)}
             />
-            <Form.Submit disabled={isInvalid} type="submit" title="Sign Up">
+            <Form.Submit data-testid="sign-up" disabled={isInvalid} type="submit" title="Sign Up">
               Sign Up
             </Form.Submit>
           </Form.Base>

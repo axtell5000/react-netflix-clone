@@ -18,13 +18,13 @@ export default function useContent(target) {
           ...contentObj.data(),
           docId: contentObj.id,
         }));
-
+        console.log(allContent, 'shizzle');
         setContent(allContent);
       })
       .catch((error) => {
         console.log(error.message);
       });
-  }, []);
+  }, [firebase]);
   // dynamic property name [target]
   return { [target]: content };
 }

@@ -61,7 +61,7 @@ export default function Signin() {
               placeholder="Password"
               onChange={({ target }) => setPassword(target.value)}
             />
-            <Form.Submit disabled={isInvalid} type="submit" title="Sign In">
+            <Form.Submit data-testid="sign-in" disabled={isInvalid} type="submit" title="Sign In">
               Sign In
             </Form.Submit>
           </Form.Base>

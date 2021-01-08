@@ -8,7 +8,7 @@ import { SelectProfileContainer } from './Profiles';
 import { FooterContainer } from './Footer';
 
 import * as ROUTES from '../constants/routes';
-import logo from '../logo.svg';
+// import logo from '../logo.svg'; // removing if pushing live
 
 // component
 import { Card, Header, Loading, Player } from '../components';
@@ -60,7 +60,7 @@ export function BrowseContainer({ slides }) {
       <Header src="joker1" dontShowOnSmallViewPort>
         <Header.Frame>
           <Header.Group>
-            <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
+            <Header.Logo to={ROUTES.HOME} src="" alt="Logo goes here" />
             <Header.TextLink active={category === 'series' ? 'true' : 'false'} onClick={() => setCategory('series')} title="Series">Series</Header.TextLink>
             <Header.TextLink active={category === 'films' ? 'true' : 'false'} onClick={() => setCategory('films')} title="Films">Films</Header.TextLink>
           </Header.Group>
